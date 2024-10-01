@@ -3,10 +3,9 @@ import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import { icons } from "../constants";
 import { usePathname, router  } from "expo-router";
 
-const SearchInput = () => {
-    const [showPassword, setShowPassword] = useState(false);
+const SearchInput = ({initialQuery}) => {
     const pathname = usePathname();
-    const [query, setQuery] = useState('')
+    const [query, setQuery] = useState( initialQuery || '')
 
     return (
         <View className="w-full h-16 px-4 bg-black-100 rounded-2xl 
